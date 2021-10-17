@@ -12,3 +12,9 @@ cypress/screenshots
 .DS_Store
 
 index.json
+
+#meus arquivo de treinamento
+listagem.spec.js
+cadastro.spec.js
+listagem-com-itens.json
+listagem-vazia.json
