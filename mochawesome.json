@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 1,
+    "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2021-10-17T14:46:32.499Z",
-    "end": "2021-10-17T14:46:47.438Z",
-    "duration": 14939,
+    "failures": 1,
+    "start": "2022-01-24T23:07:19.055Z",
+    "end": "2022-01-24T23:07:19.807Z",
+    "duration": 752,
     "testsRegistered": 1,
-    "passPercent": 100,
+    "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "5cc74e1b-f26b-46ce-bad1-58a0df53a578",
+      "uuid": "ddd2e26e-5322-4630-a42e-5b6d1c78cab7",
       "title": "",
       "fullFile": "cypress/integration/desafioCadastoAula4.spec.js",
       "file": "cypress/integration/desafioCadastoAula4.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "5a88fe89-2777-4a07-88c4-8bdaf384c39b",
+          "uuid": "c6879fa6-89f9-43f5-ab14-05f35339e07a",
           "title": "Cadastro",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,33 @@
               "title": "Cliente realiza o primerio acesso ao site e realiza o cadastro",
               "fullTitle": "Cadastro Cliente realiza o primerio acesso ao site e realiza o cadastro",
               "timedOut": null,
-              "duration": 13113,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
+              "duration": 708,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
               "code": "//Acesso o site e realizo o cadastro\ncy.visit('http://automationpractice.com/index.php');\ncy.get('.login').click();\ncy.get('input[name=email_create]').type(chance.email());\ncy.get('#SubmitCreate > span').click(); //cy.get('.page-heading').should('cotain','ACCOUNT')//Tentei colocar uma assetiva, mas retornou erro\n//preenchimento dos campos.\n//Gostaria de validar se retornar Male marcara a opção Mrs e caso retornar Female, marcar a opção Female\nconst Genero = chance.gender();\nif (Genero) {\n  cy.get('input#id_gender1').click(); //cy.get('input#id_gender1').type(chance.gender())\n}\ncy.get('input#customer_firstname').type(chance.first());\ncy.get('input#customer_lastname').type(chance.last());\ncy.get('input#passwd').type('Teste568');\ncy.get('select#days').select('10'), {\n  force: true\n};\ncy.get('select#months').select('August'), {\n  force: true\n};\ncy.get('select#years').select('1988'), {\n  force: true\n};\ncy.get('input#address1').type(chance.address());\ncy.get('input#city').type(chance.city());\ncy.get('select#id_state').select('New York'), {\n  force: true\n};\ncy.get('input#postcode').type(chance.zip());\ncy.get('textarea#other').type('Teste Cadastro');\ncy.get('input#phone_mobile').type(chance.phone({\n  country: 'br',\n  mobile: true\n}));\ncy.get('input#alias').clear().type(chance.email());\ncy.get('#submitAccount > span').click(); //Tentei colocar uma assetiva, mas retornou erro\n//cy.url().should('contain', 'ACCOUNT')",
-              "err": {},
-              "uuid": "0301317d-4626-4100-a3f6-4a7af1bdd032",
-              "parentUUID": "5a88fe89-2777-4a07-88c4-8bdaf384c39b",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://automationpractice.com/index.php\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://automationpractice.com/index.php\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n    at http://localhost:42269/__cypress/runner/cypress_runner.js:156039:84\n    at visitFailedByErr (http://localhost:42269/__cypress/runner/cypress_runner.js:155414:12)\n    at http://localhost:42269/__cypress/runner/cypress_runner.js:156019:13\n    at tryCatcher (http://localhost:42269/__cypress/runner/cypress_runner.js:13212:23)\n    at Promise._settlePromiseFromHandler (http://localhost:42269/__cypress/runner/cypress_runner.js:11147:31)\n    at Promise._settlePromise (http://localhost:42269/__cypress/runner/cypress_runner.js:11204:18)\n    at Promise._settlePromise0 (http://localhost:42269/__cypress/runner/cypress_runner.js:11249:10)\n    at Promise._settlePromises (http://localhost:42269/__cypress/runner/cypress_runner.js:11325:18)\n    at _drainQueueStep (http://localhost:42269/__cypress/runner/cypress_runner.js:7919:12)\n    at _drainQueue (http://localhost:42269/__cypress/runner/cypress_runner.js:7912:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:42269/__cypress/runner/cypress_runner.js:7928:5)\n    at Async.drainQueues (http://localhost:42269/__cypress/runner/cypress_runner.js:7798:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:42269/__cypress/tests?p=cypress/integration/desafioCadastoAula4.spec.js:2212:8)",
+                "diff": null
+              },
+              "uuid": "fb93c2a5-8c76-41a6-af0e-b9c7710ad79e",
+              "parentUUID": "c6879fa6-89f9-43f5-ab14-05f35339e07a",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [
-            "0301317d-4626-4100-a3f6-4a7af1bdd032"
+          "passes": [],
+          "failures": [
+            "fb93c2a5-8c76-41a6-af0e-b9c7710ad79e"
           ],
-          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 13113,
+          "duration": 708,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
